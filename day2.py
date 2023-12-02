@@ -8,13 +8,11 @@ bgreen = 13
 
 def possible(game):
 	game = game.split(',')
-	flag = 0
 	for i in game:
 		if i.endswith('blue'):
 			blue = int(re.findall(r'\d+',i)[0])
 			if blue > bblue:
 				return 1
-		
 		if i.endswith('red'):
 			red = int(re.findall(r'\d+',i)[0])
 			if red > bred:
@@ -35,10 +33,10 @@ for line in input:
 	if flag == 1:
 		res +=int(re.findall(r'\d+',gameidx)[0])
 
-#print(res)	
+print(res)	
 
 
-
+# Part 2
 input = open('in2').read().strip().split('\n')
 
 
@@ -53,18 +51,17 @@ def power(games):
 			if i.endswith('blue'):
 				blue = int(re.findall(r'\d+',i)[0])
 				if blue > b:
-					b = int(re.findall(r'\d+',i)[0])
+					b = blue
 			if i.endswith('red'):
 				red = int(re.findall(r'\d+',i)[0])
 				if red > r:
-					r = int(re.findall(r'\d+',i)[0])
+					r = red
 			if i.endswith('green'):
 				green = int(re.findall(r'\d+',i)[0])
 				if green > g:
-					g = int(re.findall(r'\d+',i)[0])
+					g = green 
 			
-	return b*r*g			
-	return 0
+	return b*r*g				
 
 res = 0
 for line in input:
