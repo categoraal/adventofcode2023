@@ -1,8 +1,8 @@
-input = open('in3').read().strip().split('\n')
+input = open('in3t').read().strip().split('\n')
 input = ['..'+i+'..' for i in input]
 a =[''.join( ['.']*len(input[0]))]
 input = a+input+a 
-
+[print(i) for i in input]
 number = ''
 ld = '.'
 numbers = []
@@ -46,8 +46,6 @@ def bc(y,x,number):
 		for idx in range(sx,sx+l+2):
 			if input[idy][idx] =='*':
 				return str(idy)+'_'+str(idx)
-
-
 
 for idy in range(1,len(input)-1):
 	for idx in range(1,len(input[0])-1):
