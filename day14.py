@@ -1,9 +1,6 @@
-import numpy as np
 from copy import deepcopy
 input = open('in14').read().strip().split('\n')
 
-
-#[print(i) for i in input]
 res = 0
 for c in range(len(input[0])):
 	current = 0
@@ -13,14 +10,10 @@ for c in range(len(input[0])):
 		if input[r][c] == 'O':
 			res += len(input) - current
 			current += 1				
-
 print(res)
 
 #part 2
 input = [list(i) for i in input]
-#input = np.array(input)
-
-
 def rot(x,times):
 	for j in range(times):
 		x = [list(i) for i in zip(*reversed(x))]
